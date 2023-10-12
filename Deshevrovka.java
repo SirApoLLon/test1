@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Deshevrovka {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите слово: ");
@@ -19,16 +19,13 @@ public class Main {
 
         for (int i = 0; i < s.length(); i++) {
 
-            ints[i] = ints[i] + k;
-            if (ints[i] > 122)
-                ints[i] =  ints[i] - 122 + 97;
-            if (ints[i] > 90 && ints[i] < 97) {
-                ints[i] = ints[i] - 90 + 64;
+            ints[i] = ints[i] - k;
+            if (ints[i] < 97 && ints[i] > 90) {
+                ints[i] =  123 - 97 + ints[i]  ;
             }
-
-
-
-
+            if (ints[i] < 65) {
+                ints[i] =  91 - 65 + ints[i]  ;
+            }
             chars[i] = (char) ints[i];
 
         }
